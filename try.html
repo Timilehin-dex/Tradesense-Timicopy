@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Write Out Words</title>
+    <style>
+      /* Initial CSS */
+      #text {
+        font-size: 24px;
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="text"></div>
+
+    <script>
+      // Function to write out words
+      function writeWords(words, index = 0) {
+        var textElement = document.getElementById("text");
+        if (index < words.length) {
+          textElement.textContent += words[index];
+          index++;
+          // Recursive call with a delay
+          setTimeout(function () {
+            writeWords(words, index);
+          }, 100); // Adjust the delay here (in milliseconds)
+        }
+      }
+
+      // Call the function with the words you want to write out
+      writeWords(
+        "Your route to market (RTM) and trade intelligence services provider."
+      );
+    </script>
+  </body>
+</html>
